@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
+  <groupId>uk.co.agileworks</groupId>
+  <artifactId>parity-testbed</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Parity Testbed</name>
+  <description>A testbed of code for the Parity Trading System.</description>
+  <url>https://github.com/mjwchapman/parity-testbed</url>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:git@github.com:mjwchapman/parity-testbed</connection>
+    <developerConnection>scm:git:git@github.com:mjwchapman/parity-testbed</developerConnection>
+    <url>https://github.com/mjwchapman/parity-testbed</url>
+  </scm>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <parity.version>0.7.0</parity.version>
+  </properties>
+
+  <modules>
+    <module>applications/parity-demo</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.2.3</version>
+      </dependency>
+      <dependency>
+        <groupId>com.paritytrading.parity</groupId>
+        <artifactId>parity-system</artifactId>
+        <version>${parity.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.paritytrading.parity</groupId>
+        <artifactId>parity-book</artifactId>
+        <version>${parity.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.paritytrading.parity</groupId>
+        <artifactId>parity-net</artifactId>
+        <version>${parity.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.paritytrading.parity</groupId>
+        <artifactId>parity-util</artifactId>
+        <version>${parity.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.typesafe</groupId>
+        <artifactId>config</artifactId>
+        <version>1.3.1</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.6</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-math3</artifactId>
+        <version>3.5</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jvirtanen.config</groupId>
+        <artifactId>config-extras</artifactId>
+        <version>0.2.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jvirtanen.util</groupId>
+        <artifactId>util-extras</artifactId>
+        <version>0.2.0</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.16.16</version>
+      </dependency>
+      <dependency>
+        <groupId>org.awaitility</groupId>
+        <artifactId>awaitility</artifactId>
+        <version>3.0.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-shade-plugin</artifactId>
+          <version>3.1.0</version>
+          <configuration>
+            <minimizeJar>true</minimizeJar>
+          </configuration>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                <goal>shade</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
