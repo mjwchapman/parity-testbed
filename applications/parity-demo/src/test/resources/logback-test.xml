@@ -7,7 +7,7 @@
     </layout>
   </appender>
    
-  <logger name="uk.co.agileworks" level="info"/>
+  <logger name="uk.co.agileworks.parity.demo" level="trace"/>
  
   <root level="info">
     <appender-ref ref="STDOUT" />

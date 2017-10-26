@@ -16,44 +16,16 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-    </dependency>       
-    <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
     </dependency>
     <dependency>
       <groupId>com.paritytrading.parity</groupId>
-      <artifactId>parity-book</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.paritytrading.parity</groupId>
-      <artifactId>parity-net</artifactId>
+      <artifactId>parity-system</artifactId>
     </dependency>
     <dependency>
       <groupId>com.paritytrading.parity</groupId>
       <artifactId>parity-util</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.typesafe</groupId>
-      <artifactId>config</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-math3</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jvirtanen.config</groupId>
-      <artifactId>config-extras</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jvirtanen.util</groupId>
-      <artifactId>util-extras</artifactId>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -61,15 +33,17 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.paritytrading.parity</groupId>
-      <artifactId>parity-system</artifactId>
-      <scope>test</scope>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
     </dependency>
     <dependency>
       <groupId>org.awaitility</groupId>
       <artifactId>awaitility</artifactId>
-      <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>       
   </dependencies>
 
   <build>
@@ -88,7 +62,7 @@
           <outputFile>parity-demo.jar</outputFile>
           <transformers>
             <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-              <mainClass>uk.co.agileworks.parity.demo.ParityDemo</mainClass>
+              <mainClass>uk.co.agileworks.parity.demo.DemoApp</mainClass>
             </transformer>
           </transformers>
         </configuration>

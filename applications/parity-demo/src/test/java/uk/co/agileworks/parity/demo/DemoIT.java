@@ -16,15 +16,15 @@ public class DemoIT {
     static final SimpleOrder SELL_ORDER = new SimpleOrder(Side.SELL, 100, "AAPL", 99.75);
 
     @ClassRule
-    public static ParityTestRule parity = new ParityTestRule();
+    public static ParityTestRule server = new ParityTestRule();
 
     SoupBinTCPClientFactory soupBinTCPClientFactory = new SoupBinTCPClientFactory(
-            parity.getOrderEntryAddress());
+            server.getConfig().getOrderEntryAddress());
 
     MoldUDP64ClientFactory moldUDP64ClientFactory = new MoldUDP64ClientFactory(
-            parity.getMarketDataMulticastInterface(),
-            parity.getMarketDataMulticastAddress(),
-            parity.getMarketDataRequestAddress());
+            server.getConfig().getMarketDataMulticastInterface(),
+            server.getConfig().getMarketDataMulticastAddress(),
+            server.getConfig().getMarketDataRequestAddress());
 
     Agent buyer = new Agent(soupBinTCPClientFactory);
     Agent seller = new Agent(soupBinTCPClientFactory);
