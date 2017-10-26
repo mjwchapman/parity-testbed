@@ -1,4 +1,4 @@
-package uk.co.agileworks.parity.demo.core;
+package uk.co.agileworks.parity.demo;
 
 import static org.awaitility.Awaitility.await;
 import static uk.co.agileworks.parity.demo.util.CheckedSupplier.uncheckException;

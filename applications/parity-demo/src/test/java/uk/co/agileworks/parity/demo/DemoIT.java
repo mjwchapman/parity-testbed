@@ -1,4 +1,4 @@
-package uk.co.agileworks.parity.demo.core;
+package uk.co.agileworks.parity.demo;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import org.junit.*;
 
+import uk.co.agileworks.parity.demo.core.*;
 import uk.co.agileworks.parity.demo.domain.*;
 
 public class DemoIT {
